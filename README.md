@@ -4,12 +4,13 @@
 
 Here we capture the following fundamental aspects of the Atlas ecosystem:
 
-- **[Personality](Personality/README.md):** The persona, voice, defining characteristics, and behavioral guidelines for the Atlas Digital Personal Assistant.
-- **[Activities](Activities/README.md):** The core behaviors, defined routines, and operational tasks assigned to Atlas.
-- **[Learnings](Learnings/README.md):** A structured repository for insights, debriefs, post-mortems, and institutional knowledge gained over time.
-- **[Projects](Projects/README.md):** Comprehensive documentation for specific, time-bound efforts and technical projects.
-- **[Initiatives](Initiatives/README.md):** Broader, ongoing strategic efforts that span across multiple projects or operational domains.
-- **[Goals](Goals/README.md):** Long-term and short-term objectives, OKRs (Objectives and Key Results), and success metrics for Atlas.
+- **[Personality](Personality/Core-Personality.md):** The persona, voice, defining characteristics, and behavioral guidelines for the Atlas Digital Personal Assistant.
+- **[Activities](Activities/Activities-Ledger.md):** The core behaviors, defined routines, and operational tasks assigned to Atlas.
+- **[Subordinates](Subordinates/Subordinates-Ledger.md):** The formal registry of the autonomous agents, specialized tools, and automated workers that Atlas commands.
+- **[Learnings](Learnings/Learnings-Ledger.md):** A structured repository for insights, debriefs, post-mortems, and institutional knowledge gained over time.
+- **[Projects](Projects/Projects-Ledger.md):** Comprehensive documentation for specific, time-bound efforts and technical projects.
+- **[Initiatives](Initiatives/Initiatives-Ledger.md):** Broader, ongoing strategic efforts that span across multiple projects or operational domains.
+- **[Goals](Goals/Goals-Ledger.md):** Long-term and short-term objectives, OKRs (Objectives and Key Results), and success metrics for Atlas.
 
 ***
 
