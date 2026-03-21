@@ -4,7 +4,6 @@
 **Description:** Ensuring the bridge between Alpha and the Strategic Layer is active.
 **Status:** Active
 **Project:** [Lens](../../../../Projects/Lens/Lens.md)
-**Lead Agent:** [Mr. Carson](../../../../Agents/Chief-of-Staff-Carson/Carson.md)
 
 ## Objective
 Verify the integrity of the nodal connection.

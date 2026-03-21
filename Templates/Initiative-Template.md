@@ -4,7 +4,6 @@
 **Description:** [Operational framework description.]
 **Status:** [Active | Planned | Completed]
 **Primary Goals:** [Link to Goal 1], [Link to Goal 2]
-**Assigned Agents:** [Link to Agent 1], [Link to Agent 2]
 
 ## Objective
 [Detailed articulation of how this initiative implements the linked strategic goals.]

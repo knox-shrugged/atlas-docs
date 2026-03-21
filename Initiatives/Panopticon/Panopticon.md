@@ -4,7 +4,6 @@
 **Description:** Dynamic real-time mapping of Atlas strategy to reality.
 **Status:** Active
 **Primary Goals:** [Architectural Observability](../../Goals/Architectural-Observability/Architectural-Observability.md)
-**Assigned Agents:** [Argus](../../Agents/Visualization-Argus/Argus.md)
 
 ## Objective
 Construct the necessary technical tools within `atlas-claw` to dynamically parse and graphically render the contents of `atlas-docs`.

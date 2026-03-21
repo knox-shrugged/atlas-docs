@@ -4,7 +4,6 @@
 **Description:** The foundational tactical deployment for the Alpha vector.
 **Status:** Active
 **Project:** [Lens](../../Projects/Lens/Lens.md)
-**Lead Agent:** [Mr. Carson](../../Agents/Chief-of-Staff-Carson/Carson.md)
 
 ## Objective
 Establish the primary link between the strategic layer and the initial execution scripts.

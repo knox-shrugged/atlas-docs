@@ -4,7 +4,6 @@
 **Description:** [One-off tactical mission summary.]
 **Status:** [Active | In-Progress | Completed | Blocked]
 **Project:** [Link to Parent Project]
-**Lead Agent:** [Link to lead executing Agent]
 
 ## Objective
 [Detailed definition of the desired outcome for this specific tactical unit.]
