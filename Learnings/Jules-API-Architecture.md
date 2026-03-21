@@ -1,24 +1,20 @@
-# Institutional Knowledge: Jules API Architecture
+# Learning: Jules API Architecture
 
-**Date:** March 20, 2026
-**Topic:** Google Labs Jules API Structure & Documentation Navigation
+**Date:** 2026-03-20
+**Entity:** [Jules Calibration](../Projects/Jules-Calibration/Jules-Calibration.md)
+**Insight:** Discovery of undocumented schema requirements for GitHub-backed coding sessions in the Jules v1alpha API.
+**Status:** Validated
 
-## Core Resource
-The official developer documentation and API reference for Google Labs Jules can be found securely documented here:
-[https://developers.google.com/jules/api](https://developers.google.com/jules/api)
+## Context
+During the calibration of the `google-jules` skill, we encountered persistent `400 INVALID_ARGUMENT` errors despite following preliminary schema documentation.
 
-## Context & Learning
-During **Project: Jules Calibration**, we discovered an undocumented schema shift when attempting to trigger the `CreateSession` endpoint (`POST /v1alpha/sessions`). While earlier resources suggested the schema looked like:
-```json
-{
-  "sourceContext": { "source": "sources/github/owner/repo" },
-  "prompt": "Task description"
-}
-```
+## Observation
+Manual payload testing revealed that the `githubRepoContext` object must be explicitly and rigorously defined within the `sourceContext` for successful session creation.
 
-The strict validation parser inside Jules returned repetitive `400 INVALID_ARGUMENT` errors. Following manual payload testing and external documentation reference, we uncovered the precise object structure for creating a GitHub-backed coding session. 
+## Synthesis
+All Atlas execution clients interfacing with the Jules API must strictly implement the `githubRepoContext` nesting pattern. 
 
-A successful `CreateSession` payload must rigorously define the nested `githubRepoContext` object:
+### Implementation Payload
 ```json
 {
   "sourceContext": {
@@ -28,10 +24,7 @@ A successful `CreateSession` payload must rigorously define the nested `githubRe
     }
   },
   "prompt": "Task description",
-  "automationMode": "AUTO_CREATE_PR",
-  "title": "Optional Title"
+  "automationMode": "AUTO_CREATE_PR"
 }
 ```
-
-## Protocol Application
-Moving forward across all Atlas pipelines, any custom shell script, python API execution client, or tool referencing the Jules API *must* strictly default to reading the updated structs at `https://developers.google.com/jules/api` before attempting automated payload execution.
+Moving forward, always refer to the latest [Official API Reference](https://developers.google.com/jules/api) before deployment.

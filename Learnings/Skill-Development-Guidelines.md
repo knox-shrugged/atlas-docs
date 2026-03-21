@@ -1,46 +1,21 @@
-# Institutional Knowledge: Skill Development Guidelines
+# Learning: Skill Development Guidelines
 
-**Date:** March 20, 2026
-**Topic:** Standardizing capability expansion in `atlas-claw`
+**Date:** 2026-03-20
+**Entity:** [Skill-Forge](../Initiatives/Skill-Forge/Skill-Forge.md)
+**Insight:** Establish rigid architectural protocols for autonomous capability expansion to prevent technical debt.
+**Status:** Validated
 
-## Overview
-To perpetually expand Atlas's operational capabilities (pursuant to Goal-004), we must continuously forge new "Skills." A Skill is an encapsulated directory of scripts, instructions, and credentials that teaches Atlas how to interact with an external API, database, or tool. 
+## Context
+As the `atlas-claw` repository scales, the introduction of ad-hoc scripts creates architectural drift and operational fragility. 
 
-To prevent `atlas-claw` from devolving into a chaotic mess of unstructured scripts, all new Skills MUST rigorously adhere to the following architectural guidelines.
+## Observation
+Standardizing Skills into isolated directories with mandatory `SKILL.md` metadata significantly improves agent discoverability and execution safety.
 
-## 1. Directory Structure
-Every skill must be localized within its own isolated folder inside `atlas-claw/.agents/skills/`.
+## Synthesis
+Every new capability MUST follow the Forge protocol:
+1. **Isolated Directory:** Rooted in `.agents/skills/[skill-name]/`.
+2. **Metadata Mandate:** YAML frontmatter in `SKILL.md`.
+3. **CLI Standard:** Robust argument parsing with JSON output.
+4. **Credential Safety:** Strict dynamic ingestion of `.env` variables.
 
-A standardized skill directory looks exactly like this:
-```text
-.agents/skills/[skill-name]/
-├── SKILL.md                 # Core instructions and metadata (MANDATORY)
-├── scripts/                 # Executable Python/Node/Bash scripts (MANDATORY if there's code)
-│   ├── [client_name].py
-│   └── requirements.txt     # Localized dependencies
-├── examples/                # Example input/output payloads (Optional)
-└── resources/               # Assets, templates, or raw materials (Optional)
-```
-
-## 2. The `SKILL.md` Protocol (The Metadata)
-The `SKILL.md` file is the instruction manual that Atlas reads to understand how to use the skill. It MUST contain YAML frontmatter explicitly declaring the skill.
-
-**Required Formatting:**
-```markdown
----
-name: "[Human Readable Name, e.g., Google Jules API Interaction]"
-description: "[1-2 sentence description explaining exactly what the tool does and when Atlas should use it]"
----
-
-# [Skill Title]
-[Documentation on prerequisites, base API info, provided tools, and exact terminal commands to trigger them.]
-```
-
-## 3. Operational Standards
-* **Credential Secrecy:** Hardcoding credentials inside a skill's `scripts/` directory is an absolute violation of Atlas Operations. Scripts MUST dynamically pull keys from the master `.env` file at the root of `atlas-claw` using `os.getenv()` or equivalent.
-* **Command Line Interfaces:** All scripts intended to be triggered by Atlas must be built as robust CLI tools (e.g., utilizing Python's `argparse` or Node's `commander`). They must accept clean, distinct arguments (e.g., `--action create --payload "data"`).
-* **Idempotency & Safety:** Scripts should be written with safety rails. If a script fails, it must fail gracefully and output a clear JSON error payload to `stdout` so that the agent can read the error and correct its course autonomously.
-
-## 4. Maintenance & Auditing
-* When a new tool or API is introduced to the tech stack, a corresponding Skill should immediately be scaffolded.
-* Existing skills (like Zapier or Jules) must be periodically audited to ensure dependencies are secure and APIs have not been deprecated.
+This ensures that Atlas can autonomously understand and utilize new tools without manual intervention.
