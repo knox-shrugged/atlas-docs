@@ -19,3 +19,15 @@ This section tracks the long-term and short-term objectives, OKRs (Objectives an
   - **xAI** (Grok foundational models, massive supercomputing deployments like Colossus)
   - **The Boring Company** (Subterranean transit, municipal infrastructure)
   - **X Corp** (The structural transition toward an "everything app")
+
+### Goal-003: Total Architectural Observability
+* **Objective:** Achieve complete, dynamic transparency over the Atlas data structures and architecture. Ensure that as the repository scales in complexity, the relationships between goals, initiatives, projects, and subordinates remain instantly understandable.
+* **Key Results:**
+  - A persistent capability to automatically visualize the `.md` ledger ecosystem.
+  - Zero manual labor required to update the architectural map over time.
+
+### Goal-004: Persistent Skill Ascendancy
+* **Objective:** Continuously expand Atlas's execution capabilities by systematically building, standardizing, and cataloging new operational "Skills" (tool sets, API integrations, and scripts). The goal is to evolve from a passive intelligence node into a highly capable, multi-tool digital operator.
+* **Key Results:**
+  - Establish a perfectly standardized framework for structuring, writing, and testing new capabilities in `.agents/skills/`.
+  - A growing, robust library of modular skills capable of interacting with external digital platforms seamlessly.
